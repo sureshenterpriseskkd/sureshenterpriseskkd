@@ -54,7 +54,7 @@ const Hero = () => {
                   <img
                     src={slide.image}
                     alt={slide.alt}
-                    className="w-full h-full object-cover transition-opacity duration-1000"
+                    className="w-full h-full object-cover transition-all duration-1000 ease-in-out"
                   />
                   <div className="absolute inset-0 bg-black/50"></div>
                 </div>
@@ -99,11 +99,11 @@ const Hero = () => {
         </div>
         
         {/* Scroll down indicator - Fixed position at bottom */}
-        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer">
+        <div className="absolute bottom-10 left-0 right-0 text-white animate-bounce cursor-pointer">
           <button 
             onClick={() => scrollToSection('overview')} 
             aria-label="Scroll to overview"
-            className="flex flex-col items-center"
+            className="flex flex-col items-center mx-auto"
           >
             <span className="text-sm mb-2">Learn More</span>
             <ArrowDown size={24} />

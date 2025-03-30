@@ -65,7 +65,7 @@ const Clients = () => {
         <div 
           className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
           style={{ 
-            backgroundImage: 'url(https://images.unsplash.com/photo-1512813389649-acb9131ced20?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
+            backgroundImage: 'url(https://images.unsplash.com/photo-1582486225644-3e40f5d661a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
           }}
         >
           <div className="absolute inset-0 bg-black/60"></div>

@@ -10,31 +10,37 @@ const ServicesOverview = () => {
       title: 'Stationery Supplies',
       description: 'Complete office stationery solutions for industrial operations.',
       icon: <PenTool className="service-icon" />,
+      id: 'stationery'
     },
     {
       title: 'Hand Tools Supply',
       description: 'Quality tools for maintenance, repair, and operations.',
       icon: <Wrench className="service-icon" />,
+      id: 'tools'
     },
     {
       title: 'Manpower Services',
       description: 'Skilled and unskilled labor for various industrial operations.',
       icon: <Users className="service-icon" />,
+      id: 'manpower'
     },
     {
       title: 'Wooden Boxes & Carpentry',
       description: 'Custom-made packaging solutions for safe transportation.',
       icon: <Box className="service-icon" />,
+      id: 'carpentry'
     },
     {
       title: 'Fabrication Services',
       description: 'Metal fabrication and welding work for industrial needs.',
       icon: <Hammer className="service-icon" />,
+      id: 'fabrication'
     },
     {
       title: 'Plumbing Services',
       description: 'Industrial plumbing solutions for oil and gas facilities.',
       icon: <Pipette className="service-icon" />,
+      id: 'plumbing'
     },
   ];
 
@@ -56,7 +62,7 @@ const ServicesOverview = () => {
                 {service.title}
               </h3>
               <p className="text-gray-600 mb-4">{service.description}</p>
-              <Link to="/services" className="text-accent font-medium hover:text-accent/80 inline-flex items-center">
+              <Link to={`/services#${service.id}`} className="text-accent font-medium hover:text-accent/80 inline-flex items-center">
                 Learn more 
                 <svg className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

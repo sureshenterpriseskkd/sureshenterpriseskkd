@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -14,7 +13,7 @@ const About = () => {
         <div 
           className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
           style={{ 
-            backgroundImage: 'url(https://images.unsplash.com/photo-1579847188804-2e97ed09c84c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80)'
+            backgroundImage: 'url(https://images.unsplash.com/photo-1610112645245-36020d2e4ff4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80)'
           }}
         >
           <div className="absolute inset-0 bg-black/60"></div>
@@ -32,7 +31,7 @@ const About = () => {
             <div className="lg:flex lg:items-center lg:gap-16">
               <div className="lg:w-1/2 mb-10 lg:mb-0">
                 <img 
-                  src="https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" 
+                  src="https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" 
                   alt="Industrial Facility"
                   className="rounded-lg shadow-xl w-full h-auto object-cover"
                 />

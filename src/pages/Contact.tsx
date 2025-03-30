@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -51,7 +50,7 @@ const Contact = () => {
         <div 
           className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
           style={{ 
-            backgroundImage: 'url(https://images.unsplash.com/photo-1560732488-7b5f5b6030de?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
+            backgroundImage: 'url(https://images.unsplash.com/photo-1591696205602-2f950c417cb9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
           }}
         >
           <div className="absolute inset-0 bg-black/60"></div>
@@ -203,16 +202,17 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Map section with real Google Maps embed */}
+        {/* Map section with Kakinada Google Maps embed */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
               <h2 className="text-2xl font-bold text-oil-800">Find Us</h2>
+              <p className="text-gray-600 mt-2">We are located in Kakinada, East Godavari District, Andhra Pradesh</p>
             </div>
             
-            <div className="h-[400px] rounded-lg overflow-hidden shadow-md">
+            <div className="h-[500px] rounded-lg overflow-hidden shadow-md">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60825.97727029926!2d82.19792537736511!3d16.96114376247189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3827ddaf4a5039%3A0x24c3ac424f863a0a!2sKakinada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1691214359152!5m2!1sen!2sin" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d121638.92843295855!2d82.14612771453612!3d16.989650739444862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3827ddaf4a5039%3A0x24c3ac424f863a0a!2sKakinada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1691214359152!5m2!1sen!2sin" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 

@@ -41,8 +41,8 @@ const Navbar = () => {
     <nav 
       className={cn(
         'fixed w-full z-50 transition-all duration-300',
-        // Add a dark background with some transparency
-        'bg-oil-800/95 shadow-md'
+        // Always have a dark background instead of just on scroll
+        'bg-oil-800 shadow-md'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
