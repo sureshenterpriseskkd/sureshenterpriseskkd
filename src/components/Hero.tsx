@@ -1,10 +1,40 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
 import { ArrowDown } from 'lucide-react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem,
+  type CarouselApi
+} from './ui/carousel';
+import { useCarouselAutoplay } from '@/hooks/use-carousel-autoplay';
+
+const HeroSlides = [
+  {
+    id: 1,
+    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80",
+    alt: "Oil and Gas Industry - Mountain Landscape"
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1471513671800-b09c87e1497c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80",
+    alt: "Oil Rig Silhouette at Sunset"
+  },
+  {
+    id: 3,
+    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80",
+    alt: "Industrial Oil Equipment"
+  }
+];
 
 const Hero = () => {
+  const [api, setApi] = useState<CarouselApi>();
+  
+  // Use the autoplay hook
+  useCarouselAutoplay(api, 5000, true);
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -14,14 +44,24 @@ const Hero = () => {
 
   return (
     <div className="relative h-screen flex items-center justify-center">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2840&q=80"
-          alt="Oil and Gas Industry"
-          className="w-full h-full object-cover"
-        />
-        <div className="hero-overlay"></div>
+      {/* Slideshow Background with overlay */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <Carousel className="w-full h-full" opts={{ loop: true }} setApi={setApi}>
+          <CarouselContent className="h-full">
+            {HeroSlides.map((slide) => (
+              <CarouselItem key={slide.id} className="h-full">
+                <div className="relative w-full h-full">
+                  <img
+                    src={slide.image}
+                    alt={slide.alt}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="hero-overlay"></div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
 
       {/* Content */}
@@ -40,6 +80,22 @@ const Hero = () => {
           <Button size="lg" variant="outline" asChild className="text-lg bg-white/10 backdrop-blur-sm hover:bg-white/20">
             <Link to="/contact">Get in Touch</Link>
           </Button>
+        </div>
+        
+        {/* Slide indicators */}
+        <div className="flex justify-center gap-2 mt-8">
+          {HeroSlides.map((_, index) => (
+            <button
+              key={index}
+              className={`w-3 h-3 rounded-full transition-all ${
+                api?.selectedScrollSnap() === index 
+                  ? "bg-white" 
+                  : "bg-white/40"
+              }`}
+              onClick={() => api?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
         
         {/* Scroll down indicator */}
