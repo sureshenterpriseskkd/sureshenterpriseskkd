@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
@@ -14,17 +13,17 @@ import { useCarouselAutoplay } from '@/hooks/use-carousel-autoplay';
 const HeroSlides = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80",
+    image: "https://images.pexels.com/photos/3216911/pexels-photo-3216911.jpeg?cs=srgb&dl=pexels-jan-rune-smenes-reite-221584-3216911.jpg&fm=jpg",
     alt: "Oil and Gas Industry - Mountain Landscape"
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1471513671800-b09c87e1497c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80",
+    image: "https://www.europecaribbeanline.com/assets/files/drilling-rigs-in-modern-energy-extraction.webp",
     alt: "Oil Rig Silhouette at Sunset"
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1586953208448-b95a79798f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80",
+    image: "https://www.kingpin-manufacturing.co.uk/wp-content/uploads/2015/10/Oil-rig.jpg",
     alt: "Industrial Oil Equipment"
   }
 ];
@@ -57,18 +56,18 @@ const Hero = () => {
   };
 
   return (
-    <div className="relative h-screen flex items-center justify-center">
+    <div className="relative min-h-screen w-full flex items-center justify-center">
       {/* Slideshow Background with overlay */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
+      <div className="absolute inset-0 z-0">
         <Carousel className="w-full h-full" opts={{ loop: true }} setApi={setApi}>
           <CarouselContent className="h-full">
             {HeroSlides.map((slide, index) => (
-              <CarouselItem key={slide.id} className="h-full">
-                <div className="relative w-full h-full">
+              <CarouselItem key={slide.id} className="h-full w-full">
+                <div className="relative h-screen w-full">
                   <img
                     src={slide.image}
                     alt={slide.alt}
-                    className={`w-full h-full object-cover transition-all duration-1500 ${
+                    className={`absolute inset-0 h-full w-full object-cover object-center transition-all duration-1500 ${
                       index === activeIndex ? "opacity-100 scale-105" : "opacity-0 scale-100"
                     }`}
                     style={{
@@ -84,11 +83,11 @@ const Hero = () => {
         </Carousel>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* Content section - Adjust padding for mobile */}
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16 md:mt-0">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 animate-fade-in">
           Reliable & Trusted Vendor for the 
-          <span className="text-accent block md:inline"> Oil & Gas Industry</span>
+          <span className="text-white block md:inline"> Oil & Gas Industry</span>
         </h1>
         <p className="text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl mx-auto">
           Providing quality services and supplies to the industry for over 15 years

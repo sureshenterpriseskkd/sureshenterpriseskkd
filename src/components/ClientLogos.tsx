@@ -1,36 +1,85 @@
-
-import React from 'react';
+import React, { useState } from 'react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi
+} from './ui/carousel';
+import { useCarouselAutoplay } from '@/hooks/use-carousel-autoplay';
 
 const ClientLogos = () => {
-  // Note: These would be replaced with actual client logos
+  const [api, setApi] = useState<CarouselApi>();
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  // Autoplay with 5 second interval
+  useCarouselAutoplay(api, 5000, true);
+
   const clients = [
-    { name: 'Halliburton', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Halliburton_logo.svg/1280px-Halliburton_logo.svg.png' },
-    { name: 'Baker Hughes', logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Baker_Hughes_logo.svg/1280px-Baker_Hughes_logo.svg.png' },
-    { name: 'Vetco Gray', logo: 'https://placeholder.svg' }, // Replace with actual logo
-    { name: 'OCS Services', logo: 'https://placeholder.svg' }, // Replace with actual logo
-    { name: 'Reliance Industries', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Reliance_Industries_Logo.svg/1200px-Reliance_Industries_Logo.svg.png' },
-    { name: 'ONGC', logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Oil_and_Natural_Gas_Corporation_logo.svg/1200px-Oil_and_Natural_Gas_Corporation_logo.svg.png' },
+    { name: 'Halliburton', logo: 'https://mms.businesswire.com/media/20250212386982/en/768412/22/HAL_RGB.jpg' },
+    { name: 'Baker Hughes', logo: 'https://www.bakerhughes.com/sites/bakerhughes/files/2023-10/hq_press_release.jpeg' },
+    { name: 'Vetco Gray', logo: 'https://upload.wikimedia.org/wikipedia/en/4/45/Vetcogray_logo.jpg' }, // Replace with actual logo
+    { name: 'OCS Services', logo: 'https://s3-eu-west-1.amazonaws.com/tpd/logos/5df8aa28caa2280001f85b41/0x0.png' }, // Replace with actual logo
+    { name: 'Reliance Industries', logo: 'https://images.cnbctv18.com/uploads/2024/07/reliance-industries-new-2024-07-a7df81d41c8c01b451627bbdc570c1b6.jpg' },
+    { name: 'ONGC', logo: 'https://blog.careerlauncher.com/wp-content/uploads/2019/02/ONGC-Blog.jpg' },
   ];
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl font-semibold text-oil-800">Trusted By Industry Leaders</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-oil-800 mb-6">Trusted By Industry Leaders</h2>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-          {clients.map((client, index) => (
-            <div 
-              key={index} 
-              className="flex justify-center p-4 bg-white rounded-lg shadow-sm border border-gray-100"
-            >
-              <img 
-                src={client.logo} 
-                alt={client.name}
-                className="h-12 object-contain grayscale hover:grayscale-0 transition-all duration-300"
-              />
-            </div>
+        <Carousel
+          opts={{
+            align: "center",
+            loop: true,
+          }}
+          className="w-full max-w-5xl mx-auto"
+          setApi={setApi}
+        >
+          <CarouselContent>
+            {clients.map((client, index) => (
+              <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                <div className="p-6">
+                  <div className="relative group">
+                    <div className="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                      <img 
+                        src={client.logo} 
+                        alt={client.name}
+                        className="h-32 w-full object-contain transition-all duration-300 group-hover:scale-105"
+                      />
+                      <h3 className="text-xl font-semibold text-center mt-4 text-oil-800">
+                        {client.name}
+                      </h3>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          
+          <div className="hidden md:block">
+            <CarouselPrevious className="absolute -left-12 hover:bg-oil-800 hover:text-white" />
+            <CarouselNext className="absolute -right-12 hover:bg-oil-800 hover:text-white" />
+          </div>
+        </Carousel>
+
+        {/* Slide indicators */}
+        <div className="flex justify-center gap-2 mt-8">
+          {clients.map((_, index) => (
+            <button
+              key={index}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                activeIndex === index 
+                  ? "w-6 bg-oil-800" 
+                  : "bg-gray-300"
+              }`}
+              onClick={() => api?.scrollTo(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
           ))}
         </div>
       </div>

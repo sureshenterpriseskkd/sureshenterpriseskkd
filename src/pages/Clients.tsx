@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,32 +8,32 @@ const Clients = () => {
   const clients = [
     {
       name: 'Halliburton',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Halliburton_logo.svg/1280px-Halliburton_logo.svg.png',
+      logo: 'https://www.gulfsat.com/wp-content/uploads/2020/08/Halliburton-800by541new.png',
       description: 'One of the world\'s largest oil field service companies, Halliburton operates in more than 70 countries. We have been providing various vendor services to Halliburton for over a decade.',
     },
     {
       name: 'Baker Hughes',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Baker_Hughes_logo.svg/1280px-Baker_Hughes_logo.svg.png',
+      logo: 'https://www.bakerhughes.com/sites/bakerhughes/files/2023-10/hq_press_release.jpeg',
       description: 'A leading energy technology company that provides solutions for energy and industrial customers worldwide. We have been working with Baker Hughes on multiple projects providing stationery, tool supplies, and manpower services.',
     },
     {
       name: 'Vetco Gray',
-      logo: 'https://placeholder.svg', // Replace with actual logo
+      logo: 'https://upload.wikimedia.org/wikipedia/en/4/45/Vetcogray_logo.jpg', // Replace with actual logo
       description: 'A leading supplier of products, systems, and services for offshore drilling and production applications. Our partnership with Vetco Gray includes fabrication services and wooden packaging solutions.',
     },
     {
       name: 'OCS Services',
-      logo: 'https://placeholder.svg', // Replace with actual logo
+      logo: 'https://s3-eu-west-1.amazonaws.com/tpd/logos/5df8aa28caa2280001f85b41/0x0.png', // Replace with actual logo
       description: 'A specialized service provider in the oil and gas sector. We have been supporting OCS Services with manpower and fabrication solutions for their offshore operations.',
     },
     {
       name: 'Reliance Industries',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Reliance_Industries_Logo.svg/1200px-Reliance_Industries_Logo.svg.png',
+      logo: 'https://images.cnbctv18.com/uploads/2024/07/reliance-industries-new-2024-07-a7df81d41c8c01b451627bbdc570c1b6.jpg',
       description: 'One of India\'s largest private sector companies with businesses across energy, petrochemicals, and telecommunications. We provide various vendor services to Reliance\'s oil and gas operations.',
     },
     {
       name: 'ONGC',
-      logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/Oil_and_Natural_Gas_Corporation_logo.svg/1200px-Oil_and_Natural_Gas_Corporation_logo.svg.png',
+      logo: 'https://blog.careerlauncher.com/wp-content/uploads/2019/02/ONGC-Blog.jpg',
       description: 'India\'s largest oil and gas exploration and production company. We have been working with ONGC providing stationery, manpower, and fabrication services across multiple projects.',
     },
   ];
@@ -87,19 +86,22 @@ const Clients = () => {
               </p>
             </div>
 
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
               {clients.map((client, index) => (
-                <div key={index} className="bg-gray-50 rounded-lg shadow-md overflow-hidden border border-gray-100">
-                  <div className="h-32 bg-white flex items-center justify-center p-6">
+                <div 
+                  key={index} 
+                  className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                >
+                  <div className="h-48 bg-white flex items-center justify-center p-8 border-b border-gray-100">
                     <img 
                       src={client.logo} 
                       alt={client.name}
-                      className="max-h-16 max-w-full object-contain"
+                      className="h-full w-auto max-w-full object-contain filter contrast-125"
                     />
                   </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-oil-800 mb-3">{client.name}</h3>
-                    <p className="text-gray-700">{client.description}</p>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-semibold text-oil-800 mb-4">{client.name}</h3>
+                    <p className="text-gray-600 leading-relaxed">{client.description}</p>
                   </div>
                 </div>
               ))}
