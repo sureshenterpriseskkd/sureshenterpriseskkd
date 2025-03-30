@@ -61,11 +61,11 @@ const Clients = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        {/* Hero section with background image */}
+        {/* Hero section with improved background image */}
         <div 
           className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
           style={{ 
-            backgroundImage: 'url(https://images.unsplash.com/photo-1582486225644-3e40f5d661a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
+            backgroundImage: 'url(https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
           }}
         >
           <div className="absolute inset-0 bg-black/60"></div>

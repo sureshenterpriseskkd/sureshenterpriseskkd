@@ -1,3 +1,4 @@
+
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -9,11 +10,11 @@ const About = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        {/* Hero section with background image */}
+        {/* Hero section with improved background image */}
         <div 
           className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
           style={{ 
-            backgroundImage: 'url(https://images.unsplash.com/photo-1610112645245-36020d2e4ff4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80)'
+            backgroundImage: 'url(https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2840&q=80)'
           }}
         >
           <div className="absolute inset-0 bg-black/60"></div>

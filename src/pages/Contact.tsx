@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -46,7 +47,7 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        {/* Hero section with background image */}
+        {/* Hero section with improved background image */}
         <div 
           className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
           style={{ 

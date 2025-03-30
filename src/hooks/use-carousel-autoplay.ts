@@ -25,7 +25,7 @@ export function useCarouselAutoplay(
 
   const scrollNext = useCallback(() => {
     if (api) {
-      // Remove the duration parameter as it's not supported
+      // Fixed the error - scrollNext should receive either no param or a boolean
       api.scrollNext();
     }
   }, [api]);
