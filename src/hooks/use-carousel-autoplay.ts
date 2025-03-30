@@ -25,8 +25,8 @@ export function useCarouselAutoplay(
 
   const scrollNext = useCallback(() => {
     if (api) {
-      // Add smooth scrolling with a longer duration for smoother transitions
-      api.scrollNext({ duration: 1000 });
+      // Remove the duration parameter as it's not supported
+      api.scrollNext();
     }
   }, [api]);
 
