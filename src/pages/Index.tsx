@@ -7,6 +7,8 @@ import CompanyOverview from '@/components/CompanyOverview';
 import ClientLogos from '@/components/ClientLogos';
 import CallToAction from '@/components/CallToAction';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
+import AnimatedSection from '@/components/AnimatedSection';
 
 const Index = () => {
   return (
@@ -14,12 +16,21 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow">
         <Hero />
-        <CompanyOverview />
-        <ServicesOverview />
-        <ClientLogos />
-        <CallToAction />
+        <AnimatedSection>
+          <CompanyOverview />
+        </AnimatedSection>
+        <AnimatedSection delay={100}>
+          <ServicesOverview />
+        </AnimatedSection>
+        <AnimatedSection delay={200}>
+          <ClientLogos />
+        </AnimatedSection>
+        <AnimatedSection delay={300}>
+          <CallToAction />
+        </AnimatedSection>
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 };

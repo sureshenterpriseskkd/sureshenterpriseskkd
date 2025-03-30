@@ -31,9 +31,23 @@ const HeroSlides = [
 
 const Hero = () => {
   const [api, setApi] = useState<CarouselApi>();
+  const [activeIndex, setActiveIndex] = useState(0);
   
   // Use the autoplay hook with a slower transition (7 seconds instead of 5)
   useCarouselAutoplay(api, 7000, true);
+  
+  useEffect(() => {
+    if (!api) return;
+    
+    const onSelect = () => {
+      setActiveIndex(api.selectedScrollSnap());
+    };
+    
+    api.on("select", onSelect);
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -48,13 +62,19 @@ const Hero = () => {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Carousel className="w-full h-full" opts={{ loop: true }} setApi={setApi}>
           <CarouselContent className="h-full">
-            {HeroSlides.map((slide) => (
+            {HeroSlides.map((slide, index) => (
               <CarouselItem key={slide.id} className="h-full">
                 <div className="relative w-full h-full">
                   <img
                     src={slide.image}
                     alt={slide.alt}
-                    className="w-full h-full object-cover animate-fade-in transition-all duration-1000 ease-in-out"
+                    className={`w-full h-full object-cover transition-all duration-1500 ${
+                      index === activeIndex ? "opacity-100 scale-105" : "opacity-0 scale-100"
+                    }`}
+                    style={{
+                      transform: index === activeIndex ? "scale(1.05)" : "scale(1)",
+                      transition: "opacity 1.2s ease-in-out, transform 7s ease-in-out"
+                    }}
                   />
                   <div className="absolute inset-0 bg-black/50"></div>
                 </div>
@@ -74,10 +94,10 @@ const Hero = () => {
           Providing quality services and supplies to the industry for over 15 years
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" asChild className="text-lg">
+          <Button size="lg" asChild className="text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
             <Link to="/services">Our Services</Link>
           </Button>
-          <Button size="lg" variant="outline" asChild className="text-lg bg-white/10 backdrop-blur-sm hover:bg-white/20">
+          <Button size="lg" variant="outline" asChild className="text-lg bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-all duration-300 hover:shadow-lg hover:scale-105">
             <Link to="/contact">Get in Touch</Link>
           </Button>
         </div>
@@ -87,9 +107,9 @@ const Hero = () => {
           {HeroSlides.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-all ${
-                api?.selectedScrollSnap() === index 
-                  ? "bg-white" 
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                activeIndex === index 
+                  ? "bg-white w-6" 
                   : "bg-white/40"
               }`}
               onClick={() => api?.scrollTo(index)}
@@ -99,12 +119,12 @@ const Hero = () => {
         </div>
       </div>
       
-      {/* Fixed position at bottom - moved outside the content div */}
-      <div className="absolute bottom-10 left-0 right-0 text-white animate-bounce cursor-pointer z-10">
+      {/* Fixed position at bottom - properly positioned */}
+      <div className="absolute bottom-6 left-0 right-0 text-white animate-bounce cursor-pointer z-10">
         <button 
           onClick={() => scrollToSection('overview')} 
           aria-label="Scroll to overview"
-          className="flex flex-col items-center mx-auto"
+          className="flex flex-col items-center mx-auto transition-transform hover:translate-y-1"
         >
           <span className="text-sm mb-2">Learn More</span>
           <ArrowDown size={24} />
