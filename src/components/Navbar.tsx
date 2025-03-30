@@ -41,15 +41,15 @@ const Navbar = () => {
     <nav 
       className={cn(
         'fixed w-full z-50 transition-all duration-300',
-        // Always apply background regardless of scroll position
-        'bg-white shadow-md dark:bg-oil-800' 
+        // Add a dark background with some transparency
+        'bg-oil-800/95 shadow-md'
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center">
-              <span className="text-2xl font-bold text-primary">
+              <span className="text-2xl font-bold text-white">
                 Suresh <span className="text-accent">Enterprises</span>
               </span>
             </Link>
@@ -66,7 +66,7 @@ const Navbar = () => {
                     'px-3 py-2 text-sm font-medium rounded-md transition-colors',
                     location.pathname === link.path
                       ? 'text-accent font-semibold'
-                      : 'text-oil-600 hover:text-accent dark:text-oil-200 dark:hover:text-white'
+                      : 'text-gray-200 hover:text-accent'
                   )}
                 >
                   {link.name}
@@ -82,7 +82,7 @@ const Navbar = () => {
           <div className="flex items-center md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-oil-600 dark:text-oil-200 hover:text-oil-900 dark:hover:text-white p-2"
+              className="text-gray-200 hover:text-white p-2"
               aria-expanded={isOpen}
             >
               {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -93,7 +93,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden bg-white dark:bg-oil-800 shadow-md">
+        <div className="md:hidden bg-oil-800 shadow-md">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {links.map((link) => (
               <Link
@@ -103,7 +103,7 @@ const Navbar = () => {
                   'block px-3 py-2 text-base font-medium rounded-md',
                   location.pathname === link.path
                     ? 'text-accent'
-                    : 'text-oil-600 hover:text-accent dark:text-oil-200 dark:hover:text-white'
+                    : 'text-gray-200 hover:text-accent'
                 )}
                 onClick={() => setIsOpen(false)}
               >

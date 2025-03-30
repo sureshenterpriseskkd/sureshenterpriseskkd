@@ -32,8 +32,8 @@ const HeroSlides = [
 const Hero = () => {
   const [api, setApi] = useState<CarouselApi>();
   
-  // Use the autoplay hook
-  useCarouselAutoplay(api, 5000, true);
+  // Use the autoplay hook with a slower transition (7 seconds instead of 5)
+  useCarouselAutoplay(api, 7000, true);
   
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -54,9 +54,9 @@ const Hero = () => {
                   <img
                     src={slide.image}
                     alt={slide.alt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-opacity duration-1000"
                   />
-                  <div className="hero-overlay"></div>
+                  <div className="absolute inset-0 bg-black/50"></div>
                 </div>
               </CarouselItem>
             ))}
@@ -98,7 +98,7 @@ const Hero = () => {
           ))}
         </div>
         
-        {/* Scroll down indicator */}
+        {/* Scroll down indicator - Fixed position at bottom */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce cursor-pointer">
           <button 
             onClick={() => scrollToSection('overview')} 

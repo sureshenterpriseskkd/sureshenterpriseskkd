@@ -1,11 +1,14 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
 import { PenTool, Wrench, Users, Box, Hammer, Pipette, FileText } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 const Services = () => {
+  const location = useLocation();
+  
   const services = [
     {
       id: 'stationery',
@@ -107,13 +110,33 @@ const Services = () => {
     },
   ];
 
+  // Scroll to the specific service section if hash is present in URL
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash) {
+      const element = document.getElementById(hash);
+      if (element) {
+        // Wait a bit for the page to render properly
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 300);
+      }
+    }
+  }, [location]);
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        {/* Hero section */}
-        <div className="bg-oil-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Hero section with background image */}
+        <div 
+          className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
+          style={{ 
+            backgroundImage: 'url(https://images.unsplash.com/photo-1592833159057-6fbe9ca3a8c5?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Services</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Comprehensive vendor services tailored for the oil and gas industry

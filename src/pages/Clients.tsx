@@ -61,9 +61,15 @@ const Clients = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        {/* Hero section */}
-        <div className="bg-oil-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Hero section with background image */}
+        <div 
+          className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
+          style={{ 
+            backgroundImage: 'url(https://images.unsplash.com/photo-1512813389649-acb9131ced20?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Clients</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Trusted by leading companies in the oil and gas industry

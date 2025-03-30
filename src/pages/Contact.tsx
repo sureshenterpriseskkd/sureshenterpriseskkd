@@ -47,9 +47,15 @@ const Contact = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-16">
-        {/* Hero section */}
-        <div className="bg-oil-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        {/* Hero section with background image */}
+        <div 
+          className="bg-oil-800 text-white py-32 bg-cover bg-center relative"
+          style={{ 
+            backgroundImage: 'url(https://images.unsplash.com/photo-1560732488-7b5f5b6030de?ixlib=rb-4.0.3&auto=format&fit=crop&w=2940&q=80)'
+          }}
+        >
+          <div className="absolute inset-0 bg-black/60"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Get in touch with our team for inquiries, quotes, or support
@@ -197,7 +203,7 @@ const Contact = () => {
           </div>
         </section>
 
-        {/* Map section */}
+        {/* Map section with real Google Maps embed */}
         <section className="py-16 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10">
@@ -205,10 +211,17 @@ const Contact = () => {
             </div>
             
             <div className="h-[400px] rounded-lg overflow-hidden shadow-md">
-              {/* This would be replaced with an actual Google Map iframe */}
-              <div className="bg-gray-300 w-full h-full flex items-center justify-center">
-                <p className="text-gray-700">Google Map would be embedded here</p>
-              </div>
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60825.97727029926!2d82.19792537736511!3d16.96114376247189!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3827ddaf4a5039%3A0x24c3ac424f863a0a!2sKakinada%2C%20Andhra%20Pradesh!5e0!3m2!1sen!2sin!4v1691214359152!5m2!1sen!2sin" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Suresh Enterprises KKD Location"
+                className="w-full h-full"
+              ></iframe>
             </div>
           </div>
         </section>

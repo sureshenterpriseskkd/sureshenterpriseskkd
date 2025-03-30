@@ -64,19 +64,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li className="text-gray-300 hover:text-white transition-colors">
-                <Link to="/services">Stationery Supplies</Link>
+                <Link to="/services#stationery">Stationery Supplies</Link>
               </li>
               <li className="text-gray-300 hover:text-white transition-colors">
-                <Link to="/services">Hand Tools Supply</Link>
+                <Link to="/services#tools">Hand Tools Supply</Link>
               </li>
               <li className="text-gray-300 hover:text-white transition-colors">
-                <Link to="/services">Manpower Services</Link>
+                <Link to="/services#manpower">Manpower Services</Link>
               </li>
               <li className="text-gray-300 hover:text-white transition-colors">
-                <Link to="/services">Wooden Boxes & Carpentry</Link>
+                <Link to="/services#carpentry">Wooden Boxes & Carpentry</Link>
               </li>
               <li className="text-gray-300 hover:text-white transition-colors">
-                <Link to="/services">Fabrication Services</Link>
+                <Link to="/services#fabrication">Fabrication Services</Link>
               </li>
             </ul>
           </div>
