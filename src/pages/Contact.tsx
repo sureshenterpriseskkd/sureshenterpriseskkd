@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -153,8 +152,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-oil-800">Phone</h3>
                       <p className="text-gray-700">
-                        <a href="tel:+919876543210" className="hover:text-accent">+91 9876543210</a><br />
-                        <a href="tel:+919876543211" className="hover:text-accent">+91 9876543211</a>
+                        <a href="tel:+919542137813" className="hover:text-accent">+91 9542137813</a>
                       </p>
                     </div>
                   </div>
@@ -164,8 +162,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-oil-800">Email</h3>
                       <p className="text-gray-700">
-                        <a href="mailto:info@sureshenterpriseskkd.com" className="hover:text-accent">info@sureshenterpriseskkd.com</a><br />
-                        <a href="mailto:sales@sureshenterpriseskkd.com" className="hover:text-accent">sales@sureshenterpriseskkd.com</a>
+                        <a href="mailto:sureshenterpriseskkd@gmail.com" className="hover:text-accent">sureshenterpriseskkd@gmail.com</a>
                       </p>
                     </div>
                   </div>
@@ -175,7 +172,7 @@ const Contact = () => {
                     <div>
                       <h3 className="text-lg font-semibold text-oil-800">WhatsApp</h3>
                       <p className="text-gray-700">
-                        <a href="https://wa.me/919876543210" className="hover:text-accent">Message us on WhatsApp</a>
+                        <a href="https://wa.me/919542137813" className="hover:text-accent">Message us on WhatsApp</a>
                       </p>
                     </div>
                   </div>

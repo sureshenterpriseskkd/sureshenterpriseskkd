@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -197,6 +196,13 @@ const Services = () => {
         <CallToAction />
       </main>
       <Footer />
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center">
+            Contact us at <a href="tel:+919542137813" className="text-accent hover:underline">+91 9542137813</a> or email us at <a href="mailto:sureshenterpriseskkd@gmail.com" className="text-accent hover:underline">sureshenterpriseskkd@gmail.com</a>.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

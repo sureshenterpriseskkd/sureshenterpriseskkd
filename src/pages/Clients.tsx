@@ -90,18 +90,22 @@ const Clients = () => {
               {clients.map((client, index) => (
                 <div 
                   key={index} 
-                  className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+                  className="group bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
                 >
-                  <div className="h-48 bg-white flex items-center justify-center p-8 border-b border-gray-100">
+                  <div className="h-48 bg-gradient-to-br from-white to-gray-50 flex items-center justify-center p-8 border-b border-gray-100">
                     <img 
                       src={client.logo} 
                       alt={client.name}
-                      className="h-full w-auto max-w-full object-contain filter contrast-125"
+                      className="h-full w-auto max-w-full object-contain filter contrast-125 transition-all duration-500 group-hover:scale-110"
                     />
                   </div>
-                  <div className="p-8">
-                    <h3 className="text-2xl font-semibold text-oil-800 mb-4">{client.name}</h3>
-                    <p className="text-gray-600 leading-relaxed">{client.description}</p>
+                  <div className="p-8 bg-gradient-to-br from-transparent to-gray-50/30">
+                    <h3 className="text-2xl font-semibold text-primary mb-4 group-hover:text-accent transition-colors duration-300">
+                      {client.name}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed group-hover:text-gray-800 transition-colors duration-300">
+                      {client.description}
+                    </p>
                   </div>
                 </div>
               ))}
@@ -167,6 +171,13 @@ const Clients = () => {
         <CallToAction />
       </main>
       <Footer />
+      <footer className="bg-gray-800 text-white py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <p className="text-center">
+            Contact us at <a href="tel:+919542137813" className="text-accent hover:underline">+91 9542137813</a> or email us at <a href="mailto:sureshenterpriseskkd@gmail.com" className="text-accent hover:underline">sureshenterpriseskkd@gmail.com</a>.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };

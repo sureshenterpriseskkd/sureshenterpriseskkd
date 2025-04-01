@@ -26,10 +26,12 @@ const ClientLogos = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-oil-800 mb-6">Trusted By Industry Leaders</h2>
+          <h2 className="text-4xl font-bold text-primary mb-6 animate-float">
+            Trusted By Industry Leaders
+          </h2>
         </div>
         
         <Carousel
@@ -45,13 +47,13 @@ const ClientLogos = () => {
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                 <div className="p-6">
                   <div className="relative group">
-                    <div className="bg-white rounded-xl shadow-lg p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+                    <div className="bg-white rounded-xl shadow-lg p-8 transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 hover:bg-gradient-to-br hover:from-white hover:to-gray-50">
                       <img 
                         src={client.logo} 
                         alt={client.name}
-                        className="h-32 w-full object-contain transition-all duration-300 group-hover:scale-105"
+                        className="h-32 w-full object-contain transition-all duration-500 group-hover:scale-110 filter contrast-125"
                       />
-                      <h3 className="text-xl font-semibold text-center mt-4 text-oil-800">
+                      <h3 className="text-xl font-semibold text-center mt-4 text-primary group-hover:text-accent transition-colors duration-300">
                         {client.name}
                       </h3>
                     </div>
@@ -62,20 +64,20 @@ const ClientLogos = () => {
           </CarouselContent>
           
           <div className="hidden md:block">
-            <CarouselPrevious className="absolute -left-12 hover:bg-oil-800 hover:text-white" />
-            <CarouselNext className="absolute -right-12 hover:bg-oil-800 hover:text-white" />
+            <CarouselPrevious className="absolute -left-12 hover:bg-primary hover:text-white transition-all duration-300" />
+            <CarouselNext className="absolute -right-12 hover:bg-primary hover:text-white transition-all duration-300" />
           </div>
         </Carousel>
 
-        {/* Slide indicators */}
+        {/* Slide indicators with new styling */}
         <div className="flex justify-center gap-2 mt-8">
           {clients.map((_, index) => (
             <button
               key={index}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 activeIndex === index 
-                  ? "w-6 bg-oil-800" 
-                  : "bg-gray-300"
+                  ? "w-8 bg-primary" 
+                  : "bg-gray-300 hover:bg-secondary"
               }`}
               onClick={() => api?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}

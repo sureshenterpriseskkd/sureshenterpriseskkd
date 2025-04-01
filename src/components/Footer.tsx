@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from 'lucide-react';
@@ -99,8 +98,8 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 text-accent mr-3" />
-                <a href="mailto:info@sureshenterpriseskkd.com" className="text-gray-300 hover:text-white">
-                  info@sureshenterpriseskkd.com
+                <a href="mailto:sureshenterpriseskkd@gmail.com" className="text-gray-300 hover:text-white">
+                  sureshenterpriseskkd@gmail.com
                 </a>
               </li>
             </ul>
@@ -111,6 +110,14 @@ const Footer = () => {
           <p className="text-center text-gray-400">
             &copy; {new Date().getFullYear()} Suresh Enterprises KKD. All rights reserved.
           </p>
+          <div className="text-center text-gray-400">
+            <p>
+              Phone: <a href="tel:+919542137813" className="text-accent hover:underline">+91 9542137813</a>
+            </p>
+            <p>
+              Email: <a href="mailto:sureshenterpriseskkd@gmail.com" className="text-accent hover:underline">sureshenterpriseskkd@gmail.com</a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
