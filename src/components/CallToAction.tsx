@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from './ui/button';
@@ -16,7 +15,7 @@ const CallToAction = () => {
           with reliable supplies and services.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button asChild size="lg" variant="secondary" className="text-accent">
+          <Button asChild size="lg" variant="secondary" className="bg-white text-accent hover:bg-white/90">
             <Link to="/contact" className="flex items-center gap-2">
               <Phone size={18} />
               Contact Us Now
