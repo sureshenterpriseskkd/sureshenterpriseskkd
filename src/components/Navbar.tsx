@@ -46,14 +46,14 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0 flex items-center gap-4 group">
+            <Link to="/" className="flex-shrink-0 flex items-center gap-2 md:gap-4 group">
               <img
                 src="https://res.cloudinary.com/dogxiffxk/image/upload/v1747215428/favicon-removebg-preview_twn50h.png"
                 alt="Suresh Enterprises Logo"
-                className="h-14 w-auto transition-transform duration-300 group-hover:scale-105"
+                className="h-8 md:h-14 w-auto transition-transform duration-300 group-hover:scale-105"
               />
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-oil-800 uppercase tracking-wide transition-all duration-300 group-hover:scale-105">
+                <span className="text-lg md:text-2xl font-bold text-oil-800 uppercase tracking-wide transition-all duration-300 group-hover:scale-105">
                   SURESH <span className="text-oil-800">ENTERPRISES</span>
                 </span>
               </div>
