@@ -1,9 +1,8 @@
-
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
-import { Briefcase, Target, CheckCircle, Users } from 'lucide-react';
+import { Briefcase, Target, CheckCircle } from 'lucide-react';
 
 const About = () => {
   return (
@@ -155,27 +154,39 @@ const About = () => {
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="relative mb-6 mx-auto w-32 h-32 overflow-hidden rounded-full">
-                  <Users className="absolute inset-0 w-full h-full text-gray-300" />
+                  <img
+                    src="/team/suresh.jpg"
+                    alt="Pinisetty Suresh"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-oil-800">Suresh Kumar</h3>
+                <h3 className="text-xl font-semibold text-oil-800">Pinisetty Suresh</h3>
                 <p className="text-accent mb-3">Founder & CEO</p>
-                <p className="text-gray-600">Founded the company in 2008 with over 25 years of industry experience</p>
+                <p className="text-gray-600">Founded the company in 2008 with over 17 years of industry experience</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="relative mb-6 mx-auto w-32 h-32 overflow-hidden rounded-full">
-                  <Users className="absolute inset-0 w-full h-full text-gray-300" />
+                  <img
+                    src="https://res.cloudinary.com/dogxiffxk/image/upload/v1747211922/bobby_annaya_ufufxh.jpg"
+                    alt="Arava Pandu Ranga Rao"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-oil-800">Ramesh Reddy</h3>
+                <h3 className="text-xl font-semibold text-oil-800">Arava Pandu Ranga Rao </h3>
                 <p className="text-accent mb-3">Operations Manager</p>
                 <p className="text-gray-600">Oversees all operations and ensures quality service delivery</p>
               </div>
               
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="relative mb-6 mx-auto w-32 h-32 overflow-hidden rounded-full">
-                  <Users className="absolute inset-0 w-full h-full text-gray-300" />
+                  <img
+                    src="https://res.cloudinary.com/dogxiffxk/image/upload/v1747212679/profile-C1Cw8KDH_uoa2lz.jpg"
+                    alt="Anand Pinisetty"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-oil-800">Priya Sharma</h3>
+                <h3 className="text-xl font-semibold text-oil-800">Anand Pinisetty</h3>
                 <p className="text-accent mb-3">Client Relations Manager</p>
                 <p className="text-gray-600">Manages client relationships and ensures customer satisfaction</p>
               </div>
