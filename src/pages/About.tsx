@@ -155,7 +155,7 @@ const About = () => {
               <div className="bg-white p-6 rounded-lg shadow-md text-center">
                 <div className="relative mb-6 mx-auto w-32 h-32 overflow-hidden rounded-full">
                   <img
-                    src="/team/suresh.jpg"
+                    src="https://res.cloudinary.com/dogxiffxk/image/upload/v1747213312/founder_emhakn.jpg"
                     alt="Pinisetty Suresh"
                     className="w-full h-full object-cover"
                   />
