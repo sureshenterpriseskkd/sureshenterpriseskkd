@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Linkedin, Mail, Phone } from 'lucide-react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
@@ -142,56 +144,128 @@ const About = () => {
         </section>
 
         {/* Team section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-oil-800 mb-6">Our Leadership</h2>
-              <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Our experienced team is committed to excellence and customer satisfaction
+        <section className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50">
+          <motion.div 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8"
+          >
+            <motion.div 
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-oil-800 mb-6">Our Leadership</h2>
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                Driving excellence through experienced leadership
               </p>
-            </div>
+            </motion.div>
             
-            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="relative mb-6 mx-auto w-32 h-32 overflow-hidden rounded-full">
-                  <img
-                    src="https://res.cloudinary.com/dogxiffxk/image/upload/v1747213312/founder_emhakn.jpg"
-                    alt="Pinisetty Suresh"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-oil-800">Pinisetty Suresh</h3>
-                <p className="text-accent mb-3">Founder & CEO</p>
-                <p className="text-gray-600">Founded the company in 2008 with over 17 years of industry experience</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="relative mb-6 mx-auto w-32 h-32 overflow-hidden rounded-full">
-                  <img
-                    src="https://res.cloudinary.com/dogxiffxk/image/upload/v1747211922/bobby_annaya_ufufxh.jpg"
-                    alt="Arava Pandu Ranga Rao"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-oil-800">Arava Pandu Ranga Rao </h3>
-                <p className="text-accent mb-3">Operations Manager</p>
-                <p className="text-gray-600">Oversees all operations and ensures quality service delivery</p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="relative mb-6 mx-auto w-32 h-32 overflow-hidden rounded-full">
-                  <img
-                    src="https://res.cloudinary.com/dogxiffxk/image/upload/v1747212679/profile-C1Cw8KDH_uoa2lz.jpg"
-                    alt="Anand Pinisetty"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <h3 className="text-xl font-semibold text-oil-800">Anand Pinisetty</h3>
-                <p className="text-accent mb-3">Client Relations Manager</p>
-                <p className="text-gray-600">Manages client relationships and ensures customer satisfaction</p>
-              </div>
+            <div className="grid lg:grid-cols-3 gap-12 px-4">
+              {[
+                {
+                  name: "Pinisetty Suresh",
+                  role: "Founder & CEO",
+                  image: "https://res.cloudinary.com/dogxiffxk/image/upload/v1747214122/IMG_6616_oc0n98.jpg",
+                  bio: "Founded the company in 2008 with over 17 years of industry experience",
+                  contact: {
+                    email: "suresh@sureshenterprises.com",
+                    linkedin: "#",
+                    phone: "+91 9876543210"
+                  }
+                },
+                {
+                  name: "Arava Pandu Ranga Rao",
+                  role: "Operations Manager",
+                  image: "https://res.cloudinary.com/dogxiffxk/image/upload/v1747211922/bobby_annaya_ufufxh.jpg",
+                  bio: "Oversees all operations and ensures quality service delivery",
+                  contact: {
+                    email: "pandu@sureshenterprises.com",
+                    linkedin: "#",
+                    phone: "+91 9876543211"
+                  }
+                },
+                {
+                  name: "Anand Pinisetty",
+                  role: "Client Relations Manager",
+                  image: "https://res.cloudinary.com/dogxiffxk/image/upload/v1747215001/IMG_6617_pwpksp_nsvfpg.jpg",
+                  bio: "Manages client relationships and ensures customer satisfaction",
+                  contact: {
+                    email: "anand@sureshenterprises.com",
+                    linkedin: "#",
+                    phone: "+91 9876543212"
+                  }
+                }
+              ].map((member, index) => (
+                <motion.div
+                  key={member.name}
+                  initial={{ y: 50, opacity: 0 }}
+                  whileInView={{ y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  className="group"
+                >
+                  <div className="bg-white rounded-2xl shadow-xl overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+                    <div className="relative aspect-[4/5] overflow-hidden">
+                      <motion.div
+                        whileHover={{ scale: 1.05 }}
+                        transition={{ duration: 0.4 }}
+                        className="w-full h-full"
+                      >
+                        <img
+                          src={member.image}
+                          alt={member.name}
+                          className="w-full h-full object-cover object-center"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                      </motion.div>
+                      
+                      <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                        <div className="flex justify-center space-x-4">
+                          <motion.a
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            href={`mailto:${member.contact.email}`}
+                            className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors"
+                          >
+                            <Mail className="h-5 w-5 text-white" />
+                          </motion.a>
+                          <motion.a
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            href={member.contact.linkedin}
+                            className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors"
+                          >
+                            <Linkedin className="h-5 w-5 text-white" />
+                          </motion.a>
+                          <motion.a
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                            href={`tel:${member.contact.phone}`}
+                            className="bg-white/20 backdrop-blur-sm p-2 rounded-full hover:bg-white/30 transition-colors"
+                          >
+                            <Phone className="h-5 w-5 text-white" />
+                          </motion.a>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="p-6">
+                      <h3 className="text-2xl font-bold text-oil-800 mb-2">
+                        {member.name}
+                      </h3>
+                      <p className="text-lg font-medium text-accent mb-3">{member.role}</p>
+                      <p className="text-gray-600">{member.bio}</p>
+                    </div>
+                  </div>
+                </motion.div>
+              ))}
             </div>
-          </div>
+          </motion.div>
         </section>
 
         <CallToAction />
