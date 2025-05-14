@@ -173,20 +173,20 @@ const About = () => {
                   image: "https://res.cloudinary.com/dogxiffxk/image/upload/v1747214122/IMG_6616_oc0n98.jpg",
                   bio: "Founded the company in 2008 with over 17 years of industry experience",
                   contact: {
-                    email: "suresh@sureshenterprises.com",
+                    email: "suressureshenterpriseskkdh@sureshenterprises.com",
                     linkedin: "#",
-                    phone: "+91 9876543210"
+                    phone: "+91 919542137813"
                   }
                 },
                 {
-                  name: "Arava Pandu Ranga Rao",
+                  name: "Arava bobby",
                   role: "Operations Manager",
                   image: "https://res.cloudinary.com/dogxiffxk/image/upload/v1747211922/bobby_annaya_ufufxh.jpg",
                   bio: "Oversees all operations and ensures quality service delivery",
                   contact: {
-                    email: "pandu@sureshenterprises.com",
+                    email: "pandu@sureshenterpriseskkd.com",
                     linkedin: "#",
-                    phone: "+91 9876543211"
+                    phone: "+919542137813"
                   }
                 },
                 {
@@ -195,9 +195,9 @@ const About = () => {
                   image: "https://res.cloudinary.com/dogxiffxk/image/upload/v1747215001/IMG_6617_pwpksp_nsvfpg.jpg",
                   bio: "Manages client relationships and ensures customer satisfaction",
                   contact: {
-                    email: "anand@sureshenterprises.com",
+                    email: "sureshenterpriseskkd@gmail.com",
                     linkedin: "#",
-                    phone: "+91 9876543212"
+                    phone: "+919542137813"
                   }
                 }
               ].map((member, index) => (
