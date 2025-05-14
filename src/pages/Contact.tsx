@@ -25,21 +25,50 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+
+    // Create professional WhatsApp message template
+    const message = `Dear Team at Suresh Enterprises,
+
+I hope this message finds you well. I am writing to inquire about your services.
+
+*Contact Details:*
+Full Name: ${formData.name}
+Email Address: ${formData.email}
+Contact Number: ${formData.phone}
+
+*Inquiry Details:*
+${formData.message}
+
+I look forward to hearing from you and discussing this further.
+
+Thank you for your time and consideration.
+
+Best regards,
+${formData.name}`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
     
-    // Simulate a form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you as soon as possible.",
-      });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: '',
-      });
-      setLoading(false);
-    }, 1500);
+    // WhatsApp API URL with your phone number
+    const whatsappUrl = `https://wa.me/919542137813?text=${encodedMessage}`;
+
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
+
+    // Show success toast
+    toast({
+      title: "Message prepared!",
+      description: "You'll be redirected to WhatsApp to send your message.",
+    });
+
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      message: '',
+    });
+    setLoading(false);
   };
 
   return (
