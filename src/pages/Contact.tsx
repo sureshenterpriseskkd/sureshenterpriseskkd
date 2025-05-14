@@ -37,7 +37,7 @@ Email Address: ${formData.email}
 Contact Number: ${formData.phone}
 
 *Inquiry Details:*
-${formData.message}
+${formData.message}  
 
 I look forward to hearing from you and discussing this further.
 
