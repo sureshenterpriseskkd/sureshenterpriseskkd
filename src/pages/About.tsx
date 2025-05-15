@@ -33,7 +33,7 @@ const About = () => {
             <div className="lg:flex lg:items-center lg:gap-16">
               <div className="lg:w-1/2 mb-10 lg:mb-0">
                 <img 
-                  src="https://images.unsplash.com/photo-1591696331111-ef9586a5b17a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2574&q=80" 
+                  src="https://netzero-events.com/wp-content/uploads/2023/11/AdobeStock_330141364-scaled.jpeg" 
                   alt="Industrial Facility"
                   className="rounded-lg shadow-xl w-full h-auto object-cover"
                 />

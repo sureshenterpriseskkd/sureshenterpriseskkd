@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CallToAction from '@/components/CallToAction';
-import { PenTool, Wrench, Users, Box, Hammer, Pipette, FileText } from 'lucide-react';
+import { PenTool, Wrench, Users, Box, Hammer, Pipette, FileText, Shield, Truck, PackageOpen, Power, Thermometer, Construction } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 const Services = () => {
@@ -35,7 +35,7 @@ const Services = () => {
         'Custom tool packages for specific operations',
       ],
       icon: <Wrench className="h-16 w-16 text-accent" />,
-      image: 'https://images.unsplash.com/photo-1581166397057-235af2b3c6dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      image: 'https://5.imimg.com/data5/SELLER/Default/2023/6/313776477/WR/OA/MV/1646914/stanley-stht5-73795-210pc-mixed-tool-kit-500x500.jpg',
     },
     {
       id: 'manpower',
@@ -49,7 +49,7 @@ const Services = () => {
         'Compliance with labor regulations',
       ],
       icon: <Users className="h-16 w-16 text-accent" />,
-      image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      image: 'https://5.imimg.com/data5/BP/TH/TR/SELLER-89759537/manpower-services-in-sohna-500x500.jpg',
     },
     {
       id: 'carpentry',
@@ -63,7 +63,7 @@ const Services = () => {
         'Eco-friendly materials available',
       ],
       icon: <Box className="h-16 w-16 text-accent" />,
-      image: 'https://images.unsplash.com/photo-1588435305909-0c44d9961752?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      image: 'https://res.cloudinary.com/dogxiffxk/image/upload/v1747330797/wooden-box_hloni4.png',
     },
     {
       id: 'fabrication',
@@ -77,7 +77,7 @@ const Services = () => {
         'Quality testing and certification',
       ],
       icon: <Hammer className="h-16 w-16 text-accent" />,
-      image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
+      image: 'https://texastechserv.com/wp-content/uploads/2023/08/Fabrication-Shop-Grinding.jpg',
     },
     {
       id: 'plumbing',
@@ -91,9 +91,94 @@ const Services = () => {
         'Compliance with safety standards',
       ],
       icon: <Pipette className="h-16 w-16 text-accent" />,
-      image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1738&q=80',
+      image: 'https://5.imimg.com/data5/SELLER/Default/2024/9/448828488/QU/ZG/LP/48020986/plumbing-services.jpg',
+    },
+
+    {
+      id: 'ppe',
+      title: 'PPE Material Supply',
+      description: 'We provide high-quality Personal Protective Equipment (PPE) essential for ensuring worker safety in the hazardous environments of oil and gas operations. Our comprehensive range includes certified safety gear that meets international standards and industry regulations.',
+      features: [
+        'Complete range of safety helmets, goggles, and face shields',
+        'Fire-resistant and chemical-resistant clothing',
+        'Specialized safety footwear for industrial environments',
+        'Respiratory protection equipment',
+        'Fall protection gear and safety harnesses',
+      ],
+      icon: <Shield className="h-16 w-16 text-accent" />,
+      image: 'https://res.cloudinary.com/dogxiffxk/image/upload/v1747331697/ppe_z9ej37.jpg',
     },
     {
+      id: 'crane',
+      title: '40 Ton Crane Services',
+      description: 'Our heavy lifting solutions include 40-ton crane services for complex lifting operations in oil and gas facilities. We provide both equipment rental and operated crane services with certified operators to handle critical lifting tasks safely and efficiently.',
+      features: [
+        'Certified 40-ton lifting capacity for heavy industrial components',
+        'Experienced and safety-trained crane operators',
+        'Regular equipment maintenance and inspection',
+        'Project-specific lift planning and risk assessment',
+        'Available for both short-term and long-term projects',
+      ],
+      icon: <Construction className="h-16 w-16 text-accent" />,
+      image: 'https://5.imimg.com/data5/GI/LU/CA/GLADMIN-12/tms750b1.JPG',
+    },
+    {
+      id: 'hydra',
+      title: 'Hydra Machine Services',
+      description: 'We offer versatile Hydra crane services for material handling and lifting requirements in confined spaces and challenging terrains. These pick-and-carry cranes provide excellent mobility and precision lifting capabilities for oil and gas operations.',
+      features: [
+        'Mobile pick-and-carry crane operations',
+        'All-terrain capability for difficult access areas',
+        'Telescopic boom for precise positioning',
+        'Qualified operators with industry experience',
+        'Comprehensive safety protocols for all lift operations',
+      ],
+      icon: <Truck className="h-16 w-16 text-accent" />,
+      image: 'https://5.imimg.com/data5/SELLER/Default/2023/10/350240698/XB/HG/TY/118465820/hydra-crane-rental-service-500x500.jpg',
+    },
+    {
+      id: 'forklift',
+      title: 'Fork Lift Services',
+      description: 'Our forklift services provide essential material handling solutions for loading, unloading, and transporting equipment and supplies within industrial facilities. We offer various capacity forklifts with trained operators to ensure safe and efficient operations.',
+      features: [
+        'Various forklift capacities to handle different load requirements',
+        'Indoor and rough terrain forklift options',
+        'Certified operators with safety training',
+        'Scheduled maintenance to ensure equipment reliability',
+        'Available for daily, weekly, or monthly rental',
+      ],
+      icon: <PackageOpen className="h-16 w-16 text-accent" />,
+      image: 'https://www.hflifttrucks.co.uk/wp-content/uploads/2018/02/vr-forklift-training.jpg',
+    },
+    {
+      id: 'generator',
+      title: 'Generator Services',
+      description: 'We provide comprehensive generator services including supply, installation, maintenance, and repair of power generation equipment critical for oil and gas operations. Our solutions ensure reliable power supply for both continuous operations and emergency backup requirements.',
+      features: [
+        'Supply of industrial generators in various capacities',
+        'Professional installation and commissioning',
+        'Preventive maintenance programs',
+        'Emergency repair services with quick response time',
+        'Fuel management and efficiency optimization',
+      ],
+      icon: <Power className="h-16 w-16 text-accent" />,
+      image: 'https://remsausainc.com/wp-content/uploads/AdobeStock_223494155.jpeg',
+    },
+    {
+      id: 'radiator',
+      title: 'Radiator Services',
+      description: 'Our radiator services cover maintenance, repair, and replacement of cooling systems for industrial equipment and vehicles used in oil and gas operations. We ensure optimal performance of cooling systems to prevent equipment overheating and downtime.',
+      features: [
+        'Radiator cleaning and de-scaling services',
+        'Core replacement and repair for all equipment types',
+        'Performance testing and optimization',
+        'Coolant system maintenance and fluid replacement',
+        'Emergency repair services for critical equipment',
+      ],
+      icon: <Thermometer className="h-16 w-16 text-accent" />,
+      image: 'https://res.cloudinary.com/dogxiffxk/image/upload/v1747331984/radation_zczzsl.png',
+    },
+      {
       id: 'custom',
       title: 'Custom Orders & Other Services',
       description: 'Beyond our standard offerings, we pride ourselves on our flexibility to provide other supplies and services on request. We understand that the oil and gas industry often has unique requirements, and we are equipped to meet these specialized needs.',
@@ -105,7 +190,7 @@ const Services = () => {
         'Flexible service packages',
       ],
       icon: <FileText className="h-16 w-16 text-accent" />,
-      image: 'https://images.unsplash.com/photo-1588064011404-57a7bc7133f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1548&q=80',
+      image: 'https://res.cloudinary.com/dogxiffxk/image/upload/v1747331321/custom_hec2w3.png',
     },
   ];
 
